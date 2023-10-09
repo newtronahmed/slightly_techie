@@ -1,8 +1,12 @@
 const express = require('express');
 const blogRouter = require('./routes/blog')
 const app = express();
-const mongoose = require('mongoose');
-require("dotenv").config()
+const mongoose = require('mongoose')
+
+if (process.env.NODE_ENV != "production")
+{
+    require("dotenv").config()
+}
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/v1/blog', blogRouter)
