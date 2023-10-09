@@ -127,7 +127,7 @@ const updateArticle = async (req, res) => {
             description,
             body
         }
-    }, { new: true , runValidators:true})
+    }, { new: true })
 
     // Return updated article
     res.status(200).json({
