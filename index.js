@@ -2,7 +2,7 @@ const express = require('express');
 const blogRouter = require('./routes/blog')
 const app = express();
 const mongoose = require('mongoose');
-// require("dotenv").config()
+require("dotenv").config()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/v1/blog', blogRouter)
@@ -11,7 +11,7 @@ app.get('/status', (req, res) => {
 })
 
 const PORT = process.env.PORT || 4000
-const URL = process.env.DB_URL || "mongodb+srv://ahmed:bigtimerush@cluster0.toz9i.mongodb.net/st_blog?retryWrites=true&w=majority"
+const URL = process.env.DB_URL 
 
 //Connect to database
 mongoose.connect(URL, { useNewUrlParser: true })
